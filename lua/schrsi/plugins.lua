@@ -42,9 +42,18 @@ return packer.startup(function(use)
   use "wbthomason/packer.nvim" -- Have packer manage itself
   use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
   use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
+  use "windwp/nvim-autopairs" -- Auto create close char pair
+
+  -- Comments
+  use {
+    'numToStr/Comment.nvim',
+    config = function()
+        require('Comment').setup()
+    end
+  }
 
   use 'folke/tokyonight.nvim' -- colorscheme
-  --
+  
   -- cmp plugins
   use "hrsh7th/nvim-cmp" -- The completion plugin
   use "hrsh7th/cmp-buffer" -- buffer completions
@@ -79,6 +88,10 @@ return packer.startup(function(use)
     'nvim-lualine/lualine.nvim',
     requires = {'kyazdani42/nvim-web-devicons', opt = true}
   }
+
+  use 'ray-x/go.nvim'
+
+  use "lewis6991/gitsigns.nvim"
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

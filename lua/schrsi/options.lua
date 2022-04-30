@@ -23,9 +23,11 @@ local options = {
     signcolumn = "yes",
     wrap = false,
     scrolloff = 8,
-    sidescrolloff = 8
+    sidescrolloff = 8,
 }
 
 for k, v in pairs(options) do
     vim.opt[k] = v
 end
+
+vim.cmd([[ lang pt_BR.UTF-8 ]])
